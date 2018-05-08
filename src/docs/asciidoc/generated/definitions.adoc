@@ -1,0 +1,156 @@
+
+[[_definitions]]
+== Definitions
+
+[[_dict]]
+=== Dict
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**crtDt** +
+__optional__|string (date-time)
+|**dictId** +
+__optional__|integer (int32)
+|**dictIdentify** +
+__optional__|string
+|**dictName** +
+__optional__|string
+|**dictType** +
+__optional__|integer (int32)
+|**nt** +
+__optional__|string
+|**updDt** +
+__optional__|string (date-time)
+|===
+
+
+[[_7417fc7b174f8f9f3bbd52721a622f37]]
+=== PagerResult«Dict»
+分页结果
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**data** +
+__optional__|查询页结果|< <<_dict,Dict>> > array
+|**total** +
+__optional__|结果总数|integer (int32)
+|===
+
+
+[[_f301dd7c835a0fb0891c0f3149eed477]]
+=== ResponseMessage«Dict»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**body** +
+__optional__|<<_dict,Dict>>
+|**code** +
+__optional__|integer (int32)
+|**message** +
+__optional__|object
+|**success** +
+__optional__|boolean
+|**timestamp** +
+__optional__|integer (int64)
+|===
+
+
+[[_d3a4c6bda9cd52e645d4274854174394]]
+=== ResponseMessage«List«Dict»»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**body** +
+__optional__|< <<_dict,Dict>> > array
+|**code** +
+__optional__|integer (int32)
+|**message** +
+__optional__|object
+|**success** +
+__optional__|boolean
+|**timestamp** +
+__optional__|integer (int64)
+|===
+
+
+[[_a992ef7e80eb996e6b77fee4ff546595]]
+=== ResponseMessage«PagerResult«Dict»»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**body** +
+__optional__|<<_7417fc7b174f8f9f3bbd52721a622f37,PagerResult«Dict»>>
+|**code** +
+__optional__|integer (int32)
+|**message** +
+__optional__|object
+|**success** +
+__optional__|boolean
+|**timestamp** +
+__optional__|integer (int64)
+|===
+
+
+[[_d53a2c1e07a660f2c3f1b54e6a7c98bb]]
+=== ResponseMessage«int»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**body** +
+__optional__|integer (int32)
+|**code** +
+__optional__|integer (int32)
+|**message** +
+__optional__|object
+|**success** +
+__optional__|boolean
+|**timestamp** +
+__optional__|integer (int64)
+|===
+
+
+[[_4e3465260d0b339c0ae101c8a6821732]]
+=== ResponseMessage«object»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**body** +
+__optional__|object
+|**code** +
+__optional__|integer (int32)
+|**message** +
+__optional__|object
+|**success** +
+__optional__|boolean
+|**timestamp** +
+__optional__|integer (int64)
+|===
+
+
+[[_e56f22700c5363524be3f11fbc4b11fc]]
+=== 词典信息
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**dictIdentify** +
+__optional__|词典标识 +
+**Example** : `"graph.river"`|string
+|**dictName** +
+__optional__|词典名称 +
+**Example** : `"图谱河流"`|string
+|**dictType** +
+__optional__|词典类型 +
+**Example** : `1`|integer (int32)
+|===
+
+
+

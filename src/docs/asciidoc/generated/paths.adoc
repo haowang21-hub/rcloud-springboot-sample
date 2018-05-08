@@ -1,0 +1,421 @@
+
+[[_paths]]
+== Paths
+
+[[_uploadusingpost]]
+=== 单文件上传
+....
+POST /base/file/upload
+....
+
+
+==== Description
+单个文件上传
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**FormData**|**file** +
+__required__|file|file
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_4e3465260d0b339c0ae101c8a6821732,ResponseMessage«object»>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `multipart/form-data`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* file-controller
+
+
+[[_batchuploadusingpost]]
+=== 多文件上传
+....
+POST /base/file/upload/batch
+....
+
+
+==== Description
+文件批量上传
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**FormData**|**file** +
+__required__|file|< file > array(multi)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_4e3465260d0b339c0ae101c8a6821732,ResponseMessage«object»>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* file-controller
+
+
+[[_addusingpost]]
+=== 新增
+....
+POST /dict
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Body**|**data** +
+__required__|data|<<_e56f22700c5363524be3f11fbc4b11fc,词典信息>>
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**201**|Created|<<_f301dd7c835a0fb0891c0f3149eed477,ResponseMessage«Dict»>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* dict-controller
+
+
+[[_listusingget]]
+=== 根据字段条件分页查询
+....
+GET /dict
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**ascs** +
+__optional__||< string > array(multi)
+|**Query**|**current** +
+__optional__||integer (int32)
+|**Query**|**descs** +
+__optional__||< string > array(multi)
+|**Query**|**dictIdentify** +
+__optional__|词典标识|string
+|**Query**|**dictName** +
+__optional__|词典名称|string
+|**Query**|**dictType** +
+__optional__|词典类型|integer (int32)
+|**Query**|**limit** +
+__optional__||integer (int32)
+|**Query**|**offset** +
+__optional__||integer (int32)
+|**Query**|**openSort** +
+__optional__||boolean
+|**Query**|**optimizeCountSql** +
+__optional__||boolean
+|**Query**|**orderByField** +
+__optional__||string
+|**Query**|**pages** +
+__optional__||integer (int32)
+|**Query**|**searchCount** +
+__optional__||boolean
+|**Query**|**size** +
+__optional__||integer (int32)
+|**Query**|**total** +
+__optional__||integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_a992ef7e80eb996e6b77fee4ff546595,ResponseMessage«PagerResult«Dict»»>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* dict-controller
+
+
+[[_getbyprimarykeyusingget]]
+=== 根据主键查询多条记录
+....
+GET /dict/ids
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**ids** +
+__required__|ids|< integer (int32) > array(multi)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_d3a4c6bda9cd52e645d4274854174394,ResponseMessage«List«Dict»»>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* dict-controller
+
+
+[[_listnopagingusingget]]
+=== 不分页动态查询
+....
+GET /dict/list
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**dictIdentify** +
+__optional__|词典标识|string
+|**Query**|**dictName** +
+__optional__|词典名称|string
+|**Query**|**dictType** +
+__optional__|词典类型|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_d3a4c6bda9cd52e645d4274854174394,ResponseMessage«List«Dict»»>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* dict-controller
+
+
+[[_getbyprimarykeyusingget_1]]
+=== 根据主键查询
+....
+GET /dict/{id}
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Path**|**id** +
+__required__|id|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_f301dd7c835a0fb0891c0f3149eed477,ResponseMessage«Dict»>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* dict-controller
+
+
+[[_updatebyprimarykeyusingput]]
+=== 修改数据
+....
+PUT /dict/{id}
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Path**|**id** +
+__required__|id|integer (int32)
+|**Body**|**data** +
+__required__|data|<<_dict,Dict>>
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_d53a2c1e07a660f2c3f1b54e6a7c98bb,ResponseMessage«int»>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* dict-controller
+
+
+[[_deletebyprimarykeyusingdelete]]
+=== 删除数据
+....
+DELETE /dict/{id}
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Path**|**id** +
+__required__|id|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_4e3465260d0b339c0ae101c8a6821732,ResponseMessage«object»>>
+|**204**|No Content|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* dict-controller
+
+
+

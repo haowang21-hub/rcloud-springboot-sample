@@ -1,0 +1,64 @@
+richway:
+  dynamic:
+    datasource:
+      default:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://192.168.108.145:3306/rtcoginsight?useUnicode=true&characterEncoding=utf-8&useSSL=false
+        username: rwssysconfig
+        password: pw4iowrw
+      sysconfig:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://192.168.108.145:3306/sysconfig?useUnicode=true&characterEncoding=utf-8&useSSL=false
+        username: richsysconfig
+        password: pw4iow26
+      brain:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://192.168.108.145:3306/rtcoginsight?useUnicode=true&characterEncoding=utf-8&useSSL=false
+        username: rwssysconfig
+        password: pw4iowrw
+      file:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://106.14.124.245:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false
+        username: root
+        password: accp.com
+spring:
+  aop:
+    auto: true
+  profiles:
+    active:
+    - dev
+mybatis:
+  config-location: classpath:/mybatis/mybatis-config.xml
+mybatis-plus:
+  mapper-locations: classpath:/mybatis/mapper/*Mapper.xml
+  typeAliasesPackage: com.rich.sample.entity
+  global-config:
+    id-type: 2
+    field-strategy: 2
+    db-column-underline: true
+    refresh-mapper: true
+    capital-mode: true
+    logic-delete-value: 0
+    logic-not-delete-value: 1
+    sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+logging:
+  level:
+    root: INFO
+server:
+  port: 8082
+swagger:
+  enabled: true
+  title: 江河瑞通云行业大脑
+  base-package: com.rcloud
+fdfs:
+  so-timeout: 1500
+  connect-timeout: 5000
+  thumbImage:
+    height: 150
+    width: 150
+  tracker-list:
+  - 106.14.133.33:22122
+  web-server-url: http://thinkingwork.cn:8888/
