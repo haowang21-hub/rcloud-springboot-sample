@@ -25,9 +25,9 @@ public class RcloudSpringbootSampleApplicationTests {
     @Test
     public void generateAsciiDocs() throws MalformedURLException {
         // 输出Ascii格式
-        Swagger2MarkupConfig config = new Swagger2MarkupConfigBuilder().withMarkupLanguage(MarkupLanguage.ASCIIDOC).build();
-        Swagger2MarkupConverter.from(new URL("http://192.168.1.114:8082/v2/api-docs?group=default")).withConfig(config).build()
-            .toFolder(Paths.get("src/docs/asciidoc/generated"));
+//        Swagger2MarkupConfig config = new Swagger2MarkupConfigBuilder().withMarkupLanguage(MarkupLanguage.ASCIIDOC).build();
+//        Swagger2MarkupConverter.from(new URL("http://192.168.1.114:8082/v2/api-docs?group=default")).withConfig(config).build()
+//            .toFolder(Paths.get("src/docs/asciidoc/generated"));
     }
 
 }
