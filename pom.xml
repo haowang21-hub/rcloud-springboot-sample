@@ -98,20 +98,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
-				<groupId>org.asciidoctor</groupId>
-				<artifactId>asciidoctor-maven-plugin</artifactId>
-				<version>1.5.6</version>
-				<configuration>
-					<sourceDirectory>src/docs/asciidoc/generated</sourceDirectory>
-					<outputDirectory>src/docs/asciidoc/html</outputDirectory>
-					<backend>html</backend>
-					<sourceHighlighter>coderay</sourceHighlighter>
-					<attributes>
-						<toc>left</toc>
-					</attributes>
-				</configuration>
-			</plugin>
+			
 		</plugins>
 		<resources>
 			<resource>
@@ -130,7 +117,7 @@
 	    <repository>
 	        <id>central</id>
 	        <name>artifactorypro-server-releases</name>
-	        <url>http://192.168.223.130:8081/artifactory/libs-release</url>
+	        <url>http://192.168.50.10:8081/artifactory/libs-release</url>
 	    </repository>
 	</distributionManagement>
 </project>
